@@ -85,7 +85,8 @@ function draw(){
      jump.play()
   }  
     trex.velocityY=trex.velocityY+0.2
-    ground.velocityX=-(3+count/100)
+    trex.velocityX=3
+    //ground.velocityX=-(3+count/100)
     
   
   if(ground.x<0){
@@ -111,13 +112,14 @@ function draw(){
  
   }
   else if(gameState===END){
-    ground.velocityX=0
+    //ground.velocityX=0
     trex.changeAnimation("trexCollided",trexCollided)
     obstacleGroup.setVelocityXEach(0)
     cloudGroup.setVelocityXEach(0)
     obstacleGroup.setLifetimeEach(-1)
     cloudGroup.setLifetimeEach(-1)
     trex.VelocityY=0
+    trex.velocityX=0
     gameOverImg.visible=true
     restartImg.visible=true
     if(mousePressedOver(restartImg)){
